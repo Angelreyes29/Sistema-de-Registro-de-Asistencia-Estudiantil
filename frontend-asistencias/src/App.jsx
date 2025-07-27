@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import AlumnoPanel from './pages/AlumnoPanel';
 import DocentePanel from './pages/DocentePanel';
 import AdminPanel from './pages/AdminPanel';
+import Reportes from './pages/Reportes';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path='/alumno' element={<AlumnoPanel />} />
         <Route path='/docente' element={<DocentePanel />} />
         <Route path='/admin' element={<AdminPanel />} />
+        <Route path="/reportes" element={<Reportes />} />
       </Routes>
     </BrowserRouter>
   );
