@@ -95,6 +95,21 @@ router.get('/reportes/grado/:id', verificarToken, async (req, res) => {
 
   res.json(resultados);
 });
+// Asignar docente a grado
+router.post('/docentes/asignar', verificarToken, soloRol('admin'), async (req, res) => {
+  const { docente_id, grado_id } = req.body;
+  try {
+    await pool.query(
+      'INSERT INTO docentes_grados (docente_id, grado_id) VALUES ($1, $2)',
+      [docente_id, grado_id]
+    );
+    res.status(201).json({ message: 'Docente asignado correctamente al grado.' });
+  } catch (error) {
+    console.error('Error al asignar docente a grado:', error);
+    res.status(500).json({ error: 'Error del servidor' });
+  }
+});
+
 
 // Reporte por alumno
 router.get('/reportes/alumno/:id', verificarToken, async (req, res) => {
