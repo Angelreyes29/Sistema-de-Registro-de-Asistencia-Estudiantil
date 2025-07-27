@@ -1,4 +1,4 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
 import GradosCrud from "../components/admin/GradosCrud";
 import UsuariosCrud from "../components/admin/UsuariosCrud";
 import Reportes from "../components/admin/Reportes";
